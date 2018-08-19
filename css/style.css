@@ -52,10 +52,11 @@ body {
   padding: 5px;
 }
 #buttons>button{
-  padding: 5px 10px;
+  padding: 3px 6px;
   margin:10px;
   border-radius: 6px;
   font-family: 'Helvetica', 'Arial', sans-serif;
+  background:rgba(150,200,200,0.8); 
   font-size: 1em;
 
 }

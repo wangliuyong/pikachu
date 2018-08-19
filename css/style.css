@@ -43,4 +43,23 @@ body {
     bottom: 0;
     overflow: hidden;
 }
+#buttons{
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+#buttons>button{
+  background: #ccc;
+  padding: 5px 10px;
+  margin:10px;
+}
+#buttons>button.active{
+  background: #aaa;
+}
+#buttons>button:focus{
+  outline: none;
+}
 

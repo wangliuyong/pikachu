@@ -123,22 +123,39 @@
     /*我不管我就是天下第一萌的皮卡丘，啾啾啾啾*/
     `;
     /**/
+    var timer=30;
 
     WriteCode(code1,()=>{});
 
     function WriteCode(code,fn){
         let n=0;
-        let id=window.setInterval(()=>{
+        let id=window.setTimeout(function fn(){
         n++;
         styleCode.innerHTML=code.slice(0,n);
         codeTag.innerHTML=code.slice(0,n);
         codeTag.scrollTop=10000;
         if(n>=code.length){
-            window.clearInterval(id);
+            window.clearTimeout(id);
             fn.call();
+        }else{
+            setTimeout(fn,timer)   //递归调用，用setTimeout来模仿setInterval.setInterval的时间一旦设定无法改变。
         }
-        },60);
+        },timer);
     }
+
+    var $buttons=$('#buttons');
+    $buttons.on('click','button',(e)=>{
+        var $button=$(e.currentTarget);
+        $button.addClass('active').siblings('.active').removeClass('active');
+        var speed=$button.attr('data-speed');
+        if(speed==='slow'){
+            timer=60;
+        }else if(speed==='middle'){
+            timer=30;
+        }else{
+            timer=10;
+        }
+    });
 }.call();
 
 

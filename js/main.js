@@ -137,7 +137,7 @@
             window.clearInterval(id);
             fn.call();
         }
-        },20);
+        },60);
     }
 }.call();
 
